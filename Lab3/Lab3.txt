@@ -1,0 +1,23 @@
+Lab 3: Transformations
+The goal of this lab is to get you familiar with transformations such as rotate, translate, and scale, as well as using matrices to manipulate points in 3D space.
+
+Starter Code
+To get the starter code running on your machine follow these steps (we assume you have the setup outlined in the Starter Code section of Lab 1):
+1. Create a subdirectory inside Labs called Lab3 that will contain the code for this lab.
+2. On the book's source site download gasket4.js and gasket4.html (found here) into the Lab3 folder. This file contains a 3D gasket.
+3. Try running gasket4.html in a WebGL supported browser.
+
+Base Goals (Grade: C)
+To complete this lab requires the following:
+1. Draw your gasket in 3D instead of 2D - see the Starter Code section above. Make sure you understand how the 3D gasket is drawn before continuing.
+2. Add a checkerboard ground plane below your gasket.
+3. Use mouse motion, sliders, or any other UI elements to show you can do all of the following:
+ - Rotate the gasket about the X, Y, and Z axes.
+ - Translate the gasket along the X, Y, and Z axes.
+
+Stretch Goals (Grade: A or B)
+Complete one of these goals for a B and two for an A:
+1. The location of points is computed as MV * p. We can do this computation on the CPU or GPU. The base assignment computes the matrix MV on the CPU and the multiplication MV*p on the GPU. This matches the historical way graphics has been done for years. Instead try computing MV*p on the CPU and passing the transformed points to the GPU. Compare the speed and see if it matters. Try passing just a rotation angle to the GPU and computing MV there. Measure the speed, does it make any difference?
+2. Modify the checkerboard ground plane to have height variation. That is, make it look like a terrain map with mountains and valleys.
+3. Any idea from Ch. 3 that you haven't done already.
+4. Ideas?

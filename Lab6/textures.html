@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<title>Textures</title>
+		
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 aPosition;
+			attribute vec3 aNormal;
+			attribute vec2 aTextureCoord;
+			uniform mat4 modelView;
+			uniform mat4 projection;
+			varying vec2 vTextureCoord;
+			precision mediump float;
+			varying vec3 N, L, E;
+			uniform vec4 lightPosition;
+		
+			void main(){
+				vec3 pos = -(modelView * aPosition).xyz;
+				vec3 light = lightPosition.xyz;
+				L = normalize( light - pos );
+				E =  -pos;
+				N = normalize( aNormal.xyz);
+				
+				vTextureCoord = aTextureCoord;
+				gl_Position = projection * modelView * aPosition;
+			}
+		</script>
+		
+		<script id="fragment-shader" type="x-shader/x-fragment">
+			precision mediump float;
+			uniform sampler2D textureUnit0;
+			varying vec2 vTextureCoord;
+			uniform vec4 ambientProduct;
+			uniform vec4 diffuseProduct;
+			uniform vec4 specularProduct;
+			uniform float shading;
+			uniform float shininess;
+			varying vec3 N, L, E;	
+			
+			void main(){
+				vec4 fColor;
+				
+				vec3 H = normalize( L + E );
+				vec4 ambient = ambientProduct;
+	
+				float Kd = max( dot(L, N), 0.0 );
+				vec4  diffuse = Kd*diffuseProduct;
+	
+				float Ks = pow( max(dot(N, H), 0.0), shininess );
+				vec4  specular = Ks * specularProduct;
+				
+				if( dot(L, N) < 0.0 ) specular = vec4(0.0, 0.0, 0.0, 1.0);
+	
+				fColor = ambient + diffuse + specular;
+				fColor.a = 1.0;
+				
+			    if(shading == 0.0) gl_FragColor = fColor * texture2D(textureUnit0, vTextureCoord);
+			    else gl_FragColor = texture2D(textureUnit0, vTextureCoord);
+			}
+		</script>
+		<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="../Common/initShaders.js"></script>
+		<script type="text/javascript" src="../Common/MV.js"></script>
+		<script type="text/javascript" src="textures.js"></script>
+	</head>
+	
+	<body>
+		<strong>Texture: </strong>
+		<button id="none">None</button>
+		<button id="checker">Checkerboard</button>
+		<button id="metal">Metal</button>
+		<button id="wood">Wood</button>
+		<button id="earth">Earth</button>
+		</br></br>
+		
+		<button id="lighting">Toggle Lighting</button>
+		<button id="mipmap">Toggle Mipmapping & Interpolation</button>
+		<button id="reset">Reset</button>
+		</br></br>
+		
+		<strong>Instructions:</strong></br>
+		- Use WASD to move the camera around and RF to move up and down. Right-click and drag to look around with the camera.</br>
+		- Click and drag to move the ball around. Hold shift to raise or lower it.</br>
+		- Use UHJK to move the light around and OL to move it up and down.</br>
+		- Use the buttons above to change texture of the sphere and toggle lighting and mipmapping & interpolation.</br>
+		- The effects of mipmapping and interpolation can only be seen when really far or really close.</br>
+		-- Move the camera to extreme distances and toggle back and forth to see the changes.
+		</br>
+		
+		<canvas id="gl-canvas" width="512" height="512">
+			Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas>
+	</body>
+</html>

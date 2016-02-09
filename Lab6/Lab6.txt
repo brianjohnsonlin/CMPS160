@@ -1,0 +1,29 @@
+Lab 6: Texture
+The goal of this lab is to get you famiular with using textures in Computer Graphics.
+
+Starter Code
+The starter code for this lab will be the code from your completed Lab 5:
+1. Create a subdirectory inside Labs called Lab6 that will contain the code for this lab.
+2. Copy the files from your Lab5 folder into Lab6.
+3. Start implementing.
+
+Base Goals (Grade: C)
+To complete this lab requires the following:
+1. Add texture to both the ground plane and the sphere in your scene.
+2. Provide a UI to toggle between all of these four options:
+ - No texture
+ - Checkerboard texture. This can be created via code.
+ - First texture of your choice 
+ - Second texture of your choice
+ --> Any texture image is fine as long as at least one of them is recognizable (i.e. not just swirly patterns).
+ --> Load each texture image from a file.
+3. Add UI to toggle lighting on/off. This should make visible difference in the image.
+4. Show that you can move the camera without the textures moving incorrectly.
+5. Show that you can move the sphere without the textures moving incorrectly.
+
+Stretch Goals (Grade: A or B)
+1. Implement mipmapping and interpolation. Construct an example to show their effect.
+2. Add a mirror object and reflection / environment mapping.
+3. Add two transparent spheres or other objects and use alpha blending to get correct images.
+4. Add interaction with multiple objects using picking. Perhaps multiple spheres or small regions of the ground plane, or whatever makes sense in your environment.
+5. Any of the prior extras you have not completed.

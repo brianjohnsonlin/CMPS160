@@ -1,0 +1,29 @@
+Lab2: Gasket Interaction
+The goal of this lab is to create a simple user interface to interact with your gasket from Lab 1.
+
+Starter Code
+To get the starter code running on your machine follow these steps (we assume you have the setup outlined in the Starter Code section of Lab 1):
+1. Create a subdirectory inside Labs called Lab2 that will contain the code for this lab.
+2. On the book's source site download rotatingSquare3.js and rotatingSquare3.html (found here) into the Lab2 folder. We chose these files since they have the UI elements you will need for this lab.
+3. Try running rotatingSquare3.html in a WebGL supported browser.
+
+Base Goals (Grade: C)
+To complete this lab requires the following:
+1. Replace the square from rotatingSquare3.html with your gasket from Lab 1.
+2. Add the following UI elements that produce sensible action (e.g. color change, clear screen, change gasket size, etc...):
+ - A slider
+ - A button
+ - Keyboard interaction
+3. Add mouse interaction where the gasket follows the position of the mouse when you click and drag.
+4. Include instructions on how to use the UI elements on the page.
+
+Stretch Goals (Grade: A or B)
+Complete one of these goals for a B and two for an A:
+1. Add physics based interaction - instead of just keeping the gasket under your mouse precisely, add some physics. Perhaps it bounces around and the mouse knocks it. Or perhaps it follows the mouse as if attached to a rope. That is, instead of using the mouse to directly control position, your gasket has velocity and your mouse provides changes to either velocity or acceleration.
+2. Add a simple game-like interaction.
+3. Add a paintbrush mode that allows you to paint on the background. One way to do this is to add small colored triangles under the mouse position.
+4. Ideas?
+
+Hints
+1. Adding a uniform to the fragment shader provides a very nice way to change the color of your gasket.
+2. The starter code does not include mouse event callbacks. Consult this quick tutorial for how to add them.

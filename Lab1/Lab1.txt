@@ -1,0 +1,24 @@
+Lab 1: Sierpinski Gasket
+The goal of this lab is to get your WebGL development environment setup and also to get you acquainted with rendering in WebGL.
+
+Starter Code
+The starter code for this lab is provided by the book (you can view the entire book's source online here). To get the starter code running on your machine follow these steps:
+1. Create a folder on your machine called Labs that will hold all the labs for this class.
+2. On the book's source site download the Common directory into the Labs folder. This file contains a library that makes working with WebGL much easier.
+3. Create a subdirectory inside Labs called Lab1 that will contain the code for this lab.
+4. On the book's source site download gasket2.js and gasket2.html (found here) into the Lab1 folder.
+5. Open gasket2.html in a WebGL capeable browser to run the code. You should see a drawing of the Sierpinski Gasket.
+
+Base Goals (Grade: B)
+To complete this lab requires the following:
+1. Make a modification to the gasket to produce something like fractal mountains (see the picture at the top of the page).
+2. Generate the triangles without fill.
+
+Stretch Goals (Grade: A)
+Do at least one of the following:
+1. Add color variation to make the gasket look even more like a mountain (e.g. snow or green areas).
+2. Modify the color of the gasket in the fragment shader.
+
+Hints
+1. One way to get fractal mountains is by after finding the midpoint of each side of the triangle you perturb that location before the next subdivision.
+2. There is no simple way in WebGL to remove polygon fill. Try drawing the gasket with GL_LINES instead of GL_TRIANGLES to do this.

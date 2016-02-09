@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<title>Gasket Interaction</title>
+		
+		<script id="vertex-shader" type="x-shader/x-vertex">
+			attribute vec4 vPosition;
+			void main(){
+				gl_Position = vPosition;
+			}
+		</script>
+		
+		<script id="fragment-shader-red" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+			    gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+			}
+		</script>
+		
+		<script id="fragment-shader-green" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+			    gl_FragColor = vec4( 0.0, 1.0, 0.0, 1.0 );
+			}
+		</script>
+		
+		<script id="fragment-shader-blue" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+			    gl_FragColor = vec4( 0.0, 0.0, 1.0, 1.0 );
+			}
+		</script>
+		
+		<script id="fragment-shader-black" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+			    gl_FragColor = vec4( 0.0, 0.0, 0.0, 1.0 );
+			}
+		</script>
+		
+		<script id="fragment-shader-mag" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+			    gl_FragColor = vec4( 1.0, 0.0, 1.0, 1.0 );
+			}
+		</script>
+		
+		<script id="fragment-shader-cyan" type="x-shader/x-fragment">
+			precision mediump float;
+			void main(){
+			    gl_FragColor = vec4( 0.0, 1.0, 1.0, 1.0 );
+			}
+		</script>
+		
+		<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+		<script type="text/javascript" src="../Common/initShaders.js"></script>
+		<script type="text/javascript" src="../Common/MV.js"></script>
+		<script type="text/javascript" src="gasketinteraction.js"></script>
+	</head>   
+	
+	<body>
+		Subdivisions: <strong>1</strong> <input id="subdiv" type="range"
+		 min="1" max="9" step="1" value="5" />
+		 <strong>9</strong>
+		</br></br>
+	
+		<button id="Reset">Reset</button></br>
+		
+		<!-- <select id="Controls" size="3">
+		    <option value="0">Toggle Rotation Direction</option>
+		    <option value="1">Spin Faster</option>
+		    <option value="2">Spin Slower</option>
+		</select> -->
+		
+		</br><strong>Instructions:</strong></br>
+		- Use the button and slider above to manipulate the gasket.</br>
+		- Click and drag using each of the three mouse buttons to stretch each corner of the gasket.</br>
+		- Hold 'p' and drag the corners to paint trails.</br>
+		- Press 'r', 'g', or 'b' to change the color of the gasket to red, green, or blue respectively.</br>
+	
+		<canvas id="gl-canvas" width="512" height="512">
+			Oops ... your browser doesn't support the HTML5 canvas element
+		</canvas></br>
+		
+		<strong>Game Time!</strong> Gasket will turn magenta if guess
+		is too high, cyan if too low, or black if within 1.</br>
+		Guess the Area: <input id="guess"></input>
+		<button id = "enter">Guess!</button> (Hint: the original size is 12.6.)</br>
+	</body>
+</html>

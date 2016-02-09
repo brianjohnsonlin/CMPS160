@@ -1,0 +1,19 @@
+Lab 4: Cameras and Viewing
+
+Starter Code
+The starter code for this lab will be the code from your completed Lab 3:
+1. Create a subdirectory inside Labs called Lab4 that will contain the code for this lab.
+2. Copy the files from your Lab3 folder into Lab4.
+3. Start implementing.
+
+Base Goals (Grade: C)
+To complete this lab requires the following:
+1. Add the ability to move the camera to change the position from which you look at your gasket and the checkerboard ground plane. This is equivalent to changing the LookAt matrix.
+2. Add the ability to change the field of view from narrow FOV perspective to wide FOV perspective and vice versa.
+3. The vertex shader gl_Position variable should now equal Projection * ModelView * position.
+4. Keep the prior ability to rotate and translate the object, seperate from the camera motion.
+
+Stretch Goals (Grade: A or B)
+1. Load the ground plane height variation from a file. The book provides a heightmap for some Hawaiian terrain data. You can also obtain your own height data.
+2. Any idea from earlier chapters that you have not already done.
+3. Provide good interactive mouse control for your camera control UI, instead of a giant bank of sliders and buttons at the top of the screen.

@@ -1,0 +1,24 @@
+Lab 5: Lighting and Shading
+
+Starter Code
+The starter code for this lab will be the code from your completed Lab 4:
+1. Create a subdirectory inside Labs called Lab5 that will contain the code for this lab.
+2. Copy the files from your Lab4 folder into Lab5.
+3. Start implementing.
+
+Base Goals (Grade: C)
+To complete this lab requires the following:
+1. Keep the base functionality from prior labs for moving objects and controlling camera.
+2. Add a sphere to your scene with only 100 polygons so that we can easily see the effects of adding lighting.
+3. Add lighting to your scene using a fragment shader. Use Phong shading with face normals.
+4. Allow shading to be toggled on/off via a button, keyboard, etc...
+5. Provide some method to move the light (also keep the ability to move the camera).
+
+Stretch Goals (Grade: A or B)
+1. Any idea from Ch. 3, 4, and 5 that you have not done already.
+2. Add two additional lighting modes:
+ - Gouraud shading using vertex normals (provide UI to switch from face to vertex normals).
+ - Cartoon shading.
+3. Compute some sort of random marble texture like Perlin noise in the fragment shader and apply it to your sphere. - The book discusses this in some later chapter, and there are tutorials online if you search for Perlin noise or marble texture.
+4. Add an option to make your ground plane flat but highly tessellated. Now add non-flat normals to the ground plane and compute lighting. It should look like the surface is not flat (unless you look at it edge on). This is called bump mapping. Provide options to toggle on/off.
+5. Add a spotlight function to your light. When you calculate lighting, check if the angle from your surface to the light is within some cone of light. If so then calculate lighting. If not then just use the ambient term. Provide UI to point the spotlight in different directions.
